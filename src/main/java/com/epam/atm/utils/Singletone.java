@@ -14,13 +14,14 @@ import java.util.concurrent.TimeUnit;
 public class Singletone {
 
     public static WebDriver driver;
+    private static final String PATH_TO_IE="C:\\users\\aleg_hrybouski\\Desktop\\a\\IEDriverServer.exe";
 
     private Singletone(){
     }
 
 
     private static WebDriver init() throws MalformedURLException {
-        System.setProperty("webdriver.ie.driver", "C:\\users\\aleg_hrybouski\\Desktop\\a\\IEDriverServer.exe" );
+        System.setProperty("webdriver.ie.driver", PATH_TO_IE );
        //System.setProperty("webdriver.chrome.driver", "C:\\users\\aleg_hrybouski\\Desktop\\a\\chromedriver.exe"); // do not forget to add chromedriver.exe file to src/main/resources/
        //driver = new InternetExplorerDriver();
        WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), DesiredCapabilities.internetExplorer());
